@@ -15,7 +15,7 @@ options.add_argument("headless")
 
 driver = webdriver.Chrome(options=options)
 
-te = Crawling(driver, id)
+te = Crawler.TwitterCrawling(driver, id)
 print(te)
 
 PaPagoTranslate(driver, te)
