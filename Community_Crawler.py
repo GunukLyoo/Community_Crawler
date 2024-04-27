@@ -1,5 +1,5 @@
 from selenium import webdriver
-from Crawler.twitterCrawler import Crawling
+from Crawler.Crawler import Crawler
 from Utils.translator import PaPagoTranslate
 import time
 
