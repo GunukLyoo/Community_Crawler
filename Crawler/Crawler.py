@@ -6,7 +6,7 @@ import time
 
 class Crawler:
     #트위터 최상단의 트윗을 크롤링 해오는 함수
-    def TwitterCrawling(driver, id):
+    def TwitterCrawling(driver: webdriver, id: str) -> str:
         url = 'https://twitter.com/' + id
     
         driver.get(url)
@@ -14,11 +14,15 @@ class Crawler:
         print(Crawler.twit_check(driver))
 
         name = driver.find_element(By.XPATH, '//*[@id="react-root"]/div/div/div[2]/main/div/div/div/div[1]/div/div[3]/div/div/section/div/div/div[1]//div[@data-testid="tweetText"]')
+        
+        #test = driver.find_elements(By.XPATH, '//*[@id="react-root"]/div/div/div[2]/main/div/div/div/div[1]/div/div[3]/div/div/section/div/div/div[@data-testid="tweet"]')
+        
+        #print(test)
     
         return name.text
 
     #해당 트윗이 메인으로 설정된 트윗인지 아니면 재게시된 트윗인지 확인하는 함수
-    def twit_check(driver):
+    def twit_check(driver: webdriver):
         try:
             c = driver.find_element(By.XPATH, '//*[@id="react-root"]/div/div/div[2]/main/div/div/div/div[1]/div/div[3]/div/div/section/div/div/div[1]//div[@data-testid="socialContext"]')
             return c.text
