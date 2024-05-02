@@ -4,7 +4,7 @@ from selenium.webdriver.common.by import By
 import time
 
 #텍스트를 파파고 언어 자동인식으로 한글로 번역하여 출력하는 함수
-def PaPagoTranslate(driver, text):
+def PaPagoTranslate(driver: webdriver, text: str):
     url = 'https://papago.naver.com/?sk=auto&tk=ko'
     driver.get(url)
     time.sleep(3)
@@ -16,3 +16,5 @@ def PaPagoTranslate(driver, text):
 
     resultbox = driver.find_element(By.ID, 'txtTarget')
     print(resultbox.text)
+
+#def GoogleTranslate(driver: , text):
