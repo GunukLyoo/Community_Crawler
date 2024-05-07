@@ -4,16 +4,16 @@
 추가로 크롤링한 내용이 한국어가 아닐경우 번역기를 사용하여 내용을 번역하는 기능을 제공한다.   
 사용하는 번역기로는 현재 구글 번역기와 파파고 번역기가 구현되어 있다.
 
-##Crawler
-###TwitterCrawling
+##Crawler   
+###TwitterCrawling   
 특정 사용자가 작성한 최상단의 트윗을 가져온다.   
 
-###twit_check
+###twit_check   
 최상단의 트윗이 메인이나 재게시인지 확인한다.   
 
-##Utils
-###PaPagoTranslate
+##Utils   
+###PaPagoTranslate   
 파파고 번역기를 사용하여 번역한다.   
 
-###GoogleTranslate
+###GoogleTranslate   
 구글 번역기를 사용하여 번역한다.   
