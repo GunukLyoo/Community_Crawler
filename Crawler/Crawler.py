@@ -18,12 +18,15 @@ class Crawler:
         
         #test = driver.find_element(By.CSS_SELECTOR, '#react-root > div > div > div > main > div > div > div > div > div > div:nth-child(3) > div > div > section > div > div > div:nth-child(1) > div')
         #test = driver.find_element(By.CSS_SELECTOR, '#react-root > div > div > div > main > div > div > div > div > div > div:nth-child(3) > div > div > section > div > div > div:nth-child(1) > div > div > article > div > div > div > div > div:nth-child(2)')
-        test_list = driver.find_elements(By.CSS_SELECTOR, '#react-root > div > div > div > main > div > div > div > div > div > div:nth-child(3) > div > div > section > div > div > div:nth-child(n) > div')
+        test_list = driver.find_elements(By.CSS_SELECTOR, '#react-root > div > div > div > main > div > div > div > div > div > div:nth-child(3) > div > div > section > div > div > div:nth-child(n)')
         print(len(test_list))
         for test in test_list:
             print(Crawler.twit_check(test))
-            print(test.find_element(By.CSS_SELECTOR, 'div > article > div > div > div > div > div > div[data-testid="tweetText]').text)
-            #div > article > div > div > div > div > div:nth-child(2) > div[data-testid="tweetText] 
+            #print(type(test))
+            #print(test.text)
+            print(test.get_attribute('innerHTML'))
+            #tt = test.find_element(By.CSS_SELECTOR, 'div > div > div > article > div > div > div > div > div > div[data-testid="tweetText]')
+            #print(tt.text)
             
         
         #print(test.text)
@@ -39,3 +42,4 @@ class Crawler:
             return c.text
         except NoSuchElementException as e:
             return "None"
+        
